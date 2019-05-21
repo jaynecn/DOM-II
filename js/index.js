@@ -14,24 +14,27 @@ navContainer.addEventListener('click', function(element) {
     element.target.style.backgroundColor = 'yellow';
 });
 
-const containerHome = document.getElementsByClassName('content-destination');
+const containerHome = document.querySelector('.content-destination p');
 console.log(containerHome);
 
-containerHome.addEventListener('scroll', function() {
-  containerHome.style.backgroundColor = 'green';
+containerHome.addEventListener('copy', function(element) {
+  console.log(`This text has been copied`);
 });
 
-// const images = document.getElementsByTagName('img');
-// console.log(images);
+const images = document.querySelector('.img-fluid');
+console.log(images);
+const imageList = Array.from(images);
 
-// images.addEventListener('dblclick', function(event) {
-//   event.target.style.display = 'none';
+images.addEventListener('dblclick', function() {
+  images.style.display = 'none';
+});
+
+
+
+
+// const textLarge = document.querySelectorAll('.text-content');
+// console.log(textLarge);
+
+// textLarge.addEventListener('dblclick', function() {
+//   textLarge.classList.toggle('.large');
 // });
-
-
-const textLarge = document.querySelectorAll('.text-content');
-console.log(textLarge);
-
-textLarge.addEventListener('dblclick', function() {
-  textLarge.classList.toggle('.large');
-});
