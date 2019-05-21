@@ -284,6 +284,18 @@ img {
     order: 1;
   }
 }
+.home .inverse-content .text-content .large {
+  background-color: blueviolet;
+}
+.home .inverse-content .text-content .large p {
+  font-size: 5rem;
+}
+.home .inverse-content .text-content .normal {
+  background-color: none;
+}
+.home .inverse-content .text-content .normal p {
+  font-size: 1.6rem;
+}
 .home .inverse-content .img-content {
   padding-right: 1%;
   padding-left: 0;
