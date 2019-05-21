@@ -1,6 +1,5 @@
 // Your code goes here
 let logoHeading = document.querySelector('.logo-heading');
-console.log(logoHeading);
 
 logoHeading.addEventListener('mouseenter', function() { logoHeading.style.backgroundColor = "yellow";
 });
@@ -8,21 +7,18 @@ logoHeading.addEventListener('mouseleave', function() { logoHeading.style.backgr
 });
 
 const navContainer = document.querySelector('.nav');
-console.log(navContainer);
 
 navContainer.addEventListener('click', function(element) {
     element.target.style.backgroundColor = 'yellow';
 });
 
 const containerHome = document.querySelector('.content-destination p');
-console.log(containerHome);
 
 containerHome.addEventListener('copy', function(element) {
   console.log(`This text has been copied`);
 });
 
 const images = document.querySelector('.img-fluid');
-console.log(images);
 const imageList = Array.from(images);
 
 images.addEventListener('dblclick', function() {
@@ -30,14 +26,12 @@ images.addEventListener('dblclick', function() {
 });
 
 const buttons = document.querySelectorAll('.btn');
-console.log(buttons);
 
 buttons[0].classList.add('one');
 buttons[1].classList.add('two');
 buttons[2].classList.add('three');
 
 const btn1 = document.querySelector('.btn.one');
-console.log(btn1);
 
 btn1.addEventListener('dblclick', function() {
   btn1.style.color = 'green';
@@ -45,7 +39,6 @@ btn1.addEventListener('dblclick', function() {
 });
 
 const btn2 = document.querySelector('.two');
-console.log(btn2);
 
 btn2.addEventListener('dblclick', function() {
   btn2.style.color = 'white';
@@ -53,7 +46,6 @@ btn2.addEventListener('dblclick', function() {
 });
 
 const btn3 = document.querySelector('.three');
-console.log(btn3);
 
 btn3.addEventListener('dblclick', function() {
   btn3.style.color = 'purple';
@@ -70,18 +62,23 @@ function classToggle() {
 }
 destination.addEventListener('click', classToggle);
 
+let contDest = document.querySelector('.content-destination');
+console.log(contDest);
 
-// document.querySelector('#div').addEventListener('click', classToggle);
+function greenBlack(element) {
+  element.target.style.color =  'green';
+  element.target.style.backgroundColor = 'black';
+}
 
-// destination.addEventListener('keydown', event => {
-//   if ('keydown') {
-//     return destination.style.backgroundColor = 'green';
-//     }
-// });
+contDest.addEventListener('mouseover', greenBlack);
+
+// function logSelection(event) {
+//   const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//   contDest.textContent = `You selected: ${selection}`;
+// }
+
+//  contDest.addEventListener('select', logSelection);
 
 
 
-
-// const textLarge = document.querySelectorAll('.text-content');
-// console.log(textLarge);
 
