@@ -1,4 +1,9 @@
 // Your code goes here
+
+let loaded = window.addEventListener('load', (event) => {
+  console.log('the page is fully loaded - yaaaasss');
+});
+
 let logoHeading = document.querySelector('.logo-heading');
 
 logoHeading.addEventListener('mouseenter', function() { logoHeading.style.backgroundColor = "yellow";
