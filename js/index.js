@@ -4,6 +4,11 @@ let loaded = window.addEventListener('load', (event) => {
   console.log('the page is fully loaded - yaaaasss');
 });
 
+const bodyContainer = window.addEventListener('resize', (event) => {
+  console.log(`Your window size: - Width: ${window.innerWidth}px, Height: ${window.innerHeight}px`);
+});
+
+
 let logoHeading = document.querySelector('.logo-heading');
 
 logoHeading.addEventListener('mouseenter', function() { logoHeading.style.backgroundColor = "yellow";
@@ -25,6 +30,10 @@ containerHome.addEventListener('copy', function(element) {
 
 const images = document.querySelector('.img-fluid');
 const imageList = Array.from(images);
+
+const scrollImage = window.addEventListener('scroll', (event) => {
+  console.log('THEY SEE ME SCROLLIN, THEY HATIN');
+});
 
 images.addEventListener('dblclick', function() {
   images.style.display = 'none';
