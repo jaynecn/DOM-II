@@ -76,6 +76,22 @@ function classToggle() {
 }
 destination.addEventListener('click', classToggle);
 
+let wheelDiv = document.querySelector('.img-content');
+function zoom(event) {
+  event.preventDefault();
+
+  scale += event.deltaY * -0.01;
+
+  // Restrict scale
+  scale = Math.min(Math.max(.125, scale), 4);
+
+  // Apply scale transform
+  wheelDiv.style.transform = `scale(${scale})`;
+}
+let scale = 1;
+wheelDiv.onwheel = zoom;
+
+
 let contDest = document.querySelector('.content-destination');
 console.log(contDest);
 
