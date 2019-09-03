@@ -86,12 +86,14 @@ function greenBlack(element) {
 
 contDest.addEventListener('mouseover', greenBlack);
 
-// function logSelection(event) {
-//   const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-//   contDest.textContent = `You selected: ${selection}`;
-// }
+function logSelection(event) {
+  const log = document.getElementById('log');
+  const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  log.textContent = `You selected: ${selection}`;
+}
 
-//  contDest.addEventListener('select', logSelection);
+const input = document.querySelector('input');
+input.addEventListener('select', logSelection);
 
 
 
