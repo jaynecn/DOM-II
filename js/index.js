@@ -1,4 +1,14 @@
 // Your code goes here
+
+let loaded = window.addEventListener('load', (event) => {
+  console.log('the page is fully loaded - yaaaasss');
+});
+
+const bodyContainer = window.addEventListener('resize', (event) => {
+  console.log(`Your window size: - Width: ${window.innerWidth}px, Height: ${window.innerHeight}px`);
+});
+
+
 let logoHeading = document.querySelector('.logo-heading');
 
 logoHeading.addEventListener('mouseenter', function() { logoHeading.style.backgroundColor = "yellow";
@@ -20,6 +30,10 @@ containerHome.addEventListener('copy', function(element) {
 
 const images = document.querySelector('.img-fluid');
 const imageList = Array.from(images);
+
+const scrollImage = window.addEventListener('scroll', (event) => {
+  console.log('THEY SEE ME SCROLLIN, THEY HATIN');
+});
 
 images.addEventListener('dblclick', function() {
   images.style.display = 'none';
@@ -62,6 +76,22 @@ function classToggle() {
 }
 destination.addEventListener('click', classToggle);
 
+let wheelDiv = document.querySelector('.img-content');
+function zoom(event) {
+  event.preventDefault();
+
+  scale += event.deltaY * -0.01;
+
+  // Restrict scale
+  scale = Math.min(Math.max(.125, scale), 4);
+
+  // Apply scale transform
+  wheelDiv.style.transform = `scale(${scale})`;
+}
+let scale = 1;
+wheelDiv.onwheel = zoom;
+
+
 let contDest = document.querySelector('.content-destination');
 console.log(contDest);
 
@@ -72,12 +102,14 @@ function greenBlack(element) {
 
 contDest.addEventListener('mouseover', greenBlack);
 
-// function logSelection(event) {
-//   const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-//   contDest.textContent = `You selected: ${selection}`;
-// }
+function logSelection(event) {
+  const log = document.getElementById('log');
+  const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  log.textContent = `You selected: ${selection}`;
+}
 
-//  contDest.addEventListener('select', logSelection);
+const input = document.querySelector('input');
+input.addEventListener('select', logSelection);
 
 
 
